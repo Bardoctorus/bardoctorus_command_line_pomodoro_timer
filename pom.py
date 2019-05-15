@@ -21,7 +21,7 @@ def main():
     print("oo____oo_____oo____oo____oo_________oo_____________oo____")
     print("ooooooo________oooo______ooooooo____oo_____________oo____")
     print("_________________________________________________________")
-    print("\nbardoctorus_command_line_pomodoro_timer\n\n")
+    print("\nit's the bardoctorus_command_line_pomodoro_timer\n\n")
 
     p = input("Press enter for standard 25 minute Pomodoropolous with 5 \
 minute breaks.\nAlternatively enter your chosen pomolomanomanom time in minutes\n")
@@ -41,13 +41,15 @@ minute breaks.\nAlternatively enter your chosen pomolomanomanom time in minutes\
 Press Ctrl + C to quit at any time.\n\nGo!\n")
     pom_phase = 1
     print("Pomgrominate Phase: "+str(pom_phase)+"/4")
+
+
     for q, i in enumerate(g):
         
         
         
         start_time = dt.now()
 
-        end_time = start_time + timedelta (seconds = i) # ! seconds version for testing Change to mins
+        end_time = start_time + timedelta (minutes = i) # ! seconds version for testing Change to mins
         timer (end_time)
         if q == 6:
             break
@@ -65,6 +67,8 @@ Press Ctrl + C to quit at any time.\n\nGo!\n")
 def timer(end_time):   
     while True:        
         current_time = dt.now()
+        percent_complete = 100 * (end_time/current_time)
+        print(current_time)
         if(current_time >= end_time):         
             sound.play()
             sleep(2)
